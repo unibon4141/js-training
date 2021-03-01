@@ -4,7 +4,18 @@ import Chart from "../../components/Chart01";
 import instruction from "./instruction.md";
 
 const convertData = (input) => {
-  return []; // ここを作りましょう！
+  // const  len  = input.length;
+  // let newArray = [];
+  // for(let i = 0;i<len;i++){
+  //   newArray.push({'name': input[i][0],'count' : input[i][1]});
+  // }
+  // return newArray; // ここを作りましょう！ 
+
+  // input配列の各要素の配列の２つの要素を変数name, countに代入 
+  return input.map(([name,count]) => ({
+    name, 
+    count,
+  }));
 };
 
 const Lesson = () => {
