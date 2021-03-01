@@ -4,7 +4,11 @@ import Chart from "../../components/Chart03";
 import instruction from "./instruction.md";
 
 const convertData = (input) => {
-  return []; // ここを作りましょう！
+  // filterメソッドは非破壊関数
+    return input.filter((item) => {
+    return item.gender === '男性';
+  })
+  
 };
 
 const Lesson = () => {
