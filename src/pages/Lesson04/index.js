@@ -4,20 +4,36 @@ import Chart from "../../components/Chart04";
 import instruction from "./instruction.md";
 
 const convertData = (input) => {
-  return []; // ここを作りましょう！
+  //input配列の重複のないspeciesプロパティの値を格納
+  const species  = Array.from(new Set(input.map(
+    (
+//{species:species} ) => {return species})));
+      {species}  ) => species)));
+
+  return species.map((species) => {
+    return {
+      "id":species,
+      "data":input
+      // item:input配列の要素
+        .filter((item) => item.species === species)
+        // sepalLengthのプロパティ名をxに一時的に変更してる？
+        .map(({"sepalLength":x, "petalWidth":y}) => ({x:x,y:y}) ),
+
+    };
+  });
 };
 
 const Lesson = () => {
   return (
     <LessonPage
       answerUrl="/answer04"
-      dataUrl="data/iris.json"
-      convertData={convertData}
-      instruction={instruction}
-      title="Lesson 04"
-      Chart={Chart}
-    />
-  );
-};
+        dataUrl="data/iris.json"
+        convertData={convertData}
+        instruction={instruction}
+        title="Lesson 04"
+        Chart={Chart}
+      />
+    );
+  };
 
-export default Lesson;
+  export default Lesson;
