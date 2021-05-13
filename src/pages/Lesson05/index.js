@@ -4,7 +4,8 @@ import Chart from "../../components/Chart05";
 import instruction from "./instruction.md";
 
 const convertData = (input) => {
-  return []; // ここを作りましょう！
+  const genders = Array.from(new Set(input.map(gender => gender)));
+
 };
 
 const Lesson = () => {
